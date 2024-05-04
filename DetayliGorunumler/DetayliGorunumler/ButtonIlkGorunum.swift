@@ -9,18 +9,21 @@ import SwiftUI
 
 struct ButtonIlkGorunum: View {
     var body: some View {
-        
-        VStack {
-            
-            OzelGorselView(image: Image("izmir"))
-    
-            Button (action: {
-                print("tıklandı")
-            }, label: {
-                Text("benim buttonum")
-            })
+        NavigationView {
+            VStack {
+                OzelGorselView(image: Image("izmir"))
+                Button (action: {
+                    print("tıklandı")
+                }, label: {
+                    Text("benim buttonum")
+                })
+                NavigationLink(destination: ButtonIkinciGorunum(), label: {
+                    Text("İkinci görünüme gider")
+                }).padding()
+            }.navigationTitle("Birinci Görünüm")
         }
     }
+    
 }
 
 #Preview {
